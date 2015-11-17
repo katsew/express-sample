@@ -6,4 +6,8 @@ html
   body
     h1.base #{title}
     p= message
-    p= test
+    form(method="POST" action="/user/create")
+      label ユーザー名:
+      input(type="text" name="user_name")
+        
+      input(type="submit" value="新規ユーザ作成")

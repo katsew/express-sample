@@ -11,7 +11,9 @@
     "env": {
         "NODE_ENV": "development",
         "PORT": "3000",
-        "DEBUG": "http:*"
+        "DEBUG": "http:*",
+        "MONGODB_HOSTNAME": "localhost",
+        "MONGODB_PORT": "27017"
     },
     "error_file": "./log/error.log",
     "out_file": "./log/output.log"
