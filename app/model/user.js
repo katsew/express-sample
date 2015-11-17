@@ -4,17 +4,14 @@ const CONSTANTS = require("../constants.js");
 const mongoose = require("mongoose");
 const db = mongoose.connect(`mongodb://${CONSTANTS.MONGODB_HOSTNAME}:${CONSTANTS.MONGODB_PORT}/trn_user`);
 
-let validator = function (v) {
+const validator = function (v) {
   return v.length > 0;
 };
 
-mongoose.connection.on("connected", function () {
-  console.log(`Connect to mongoose done.`);
-});
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    validate: [validator, "Enpty Error"]
+    validate: [validator, "Empty Error"]
   },
   created: {
     type: Date,
@@ -22,6 +19,5 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model("User", UserSchema);
-
-module.exports = User;
+const UserModel = mongoose.model("UserModel", UserSchema);
+module.exports = UserModel;
