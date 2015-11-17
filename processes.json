@@ -4,18 +4,18 @@
     "script"      : "server.js",
     "args"        : [],
     "watch"       : true,
-    "autostart"   : true,
+    "autorestart"   : true,
     "node_args"   : "",
     "merge_logs"  : false,
     "cwd"         : "./",
     "env": {
-        "NODE_ENV": "development",
-        "PORT": "3000",
-        "DEBUG": "http:*",
-        "MONGODB_HOSTNAME": "localhost",
-        "MONGODB_PORT": "27017"
+      "NODE_ENV": "development",
+      "PORT": "3000",
+      "DEBUG": "http:*"
     },
+    "ignore_watch": ["node_modules", "log", "assets", "pids", "\.git\/"],
     "error_file": "./log/error.log",
-    "out_file": "./log/output.log"
+    "out_file": "./log/output.log",
+    "pid_file": "./pids/app.pid"
   }]
 }
