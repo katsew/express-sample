@@ -1,0 +1,19 @@
+{
+  "apps" : [{
+    "name"        : "express-sample",
+    "script"      : "server.js",
+    "args"        : [],
+    "watch"       : true,
+    "autostart"   : true,
+    "node_args"   : "",
+    "merge_logs"  : false,
+    "cwd"         : "./",
+    "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000",
+        "DEBUG": "http:*"
+    },
+    "error_file": "./log/error.log",
+    "out_file": "./log/output.log"
+  }]
+}
