@@ -6,8 +6,28 @@ html
   body
     h1.base #{title}
     p= message
-    form(method="POST" action="/user/create")
+    form(method="POST" action="/user/registar")
+      h2 新規登録
       label ユーザー名:
-      input(type="text" name="user_name")
-        
+      input(type="text" name="user_name" placeholder="Yu Kato" required pattern="^[a-zA-Z0-9\_]+$")
+      br
+      label メールアドレス:
+      input(type="email" name="user_email" placeholder="sample@example.com" required pattern="^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$")
+      br
+      label パスワード
+      input(type="password" name="password" required)
+      br
+      laebl パスワード確認
+      input(type="password" name="confirm" required)
+      br
       input(type="submit" value="新規ユーザ作成")
+        
+    form(method="POST" action="/user/login")
+      h2 ログイン
+      label メールアドレス
+      input(type="email" name="user_email" placeholder="sample@example.com" required pattern="^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$")
+      br
+      label パスワード
+      input(type="password" name="password" required)
+      
+      input(type="submit" value="ログイン")

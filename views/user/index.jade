@@ -6,3 +6,6 @@ html
   body
     h1.base #{title}
     p= message
+
+    form(method="GET" action="/user/logout")
+      input(type="submit" value="ログアウト")

@@ -1,15 +1,9 @@
 "use strict";
 
 const express = require("express");
+const verifyLogin = require("../util/login-verification.js");
 const DefaultController = express.Router({
   caseSensitive: true
-});
-
-DefaultController.get("/top", (req, res) => {
-  res.render("top/index", {
-    title: "hello top page",
-    message: "this is a message from server express yo!"
-  });
 });
 
 DefaultController.get("/", (req, res) => {
@@ -18,6 +12,5 @@ DefaultController.get("/", (req, res) => {
     message: "this is a message from server express"
   });
 });
-
 
 module.exports = DefaultController;
