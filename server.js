@@ -8,8 +8,7 @@ const session = require("express-session");
 const uuid = require("node-uuid");
 const MongoStore = require("connect-mongo")(session);
 const CONSTANTS = require("./app/constants.js");
-const defaultRouter = require("./app/controller/default.js");
-const userController = require("./app/controller/user.js");
+const router = require("./app/router.js");
 const app = express();
 
 // Front-end Engines
@@ -44,9 +43,8 @@ app.use(session({
   }
 }));
 
-// Registar router
-app.use(defaultRouter);
-app.use(userController);
+// Registar router and serve static assets
+app.use(router);
 app.use(express.static("assets"));
 
 // Start application listen port
